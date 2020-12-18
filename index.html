@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sorting out some muddled arrays">
+  <title>Sorting Visualiser</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+  <script src="./node_modules/chart.js/dist/Chart.js"></script>
+  <script src="./navbar.js"></script>
+  
+  <div class="navbar"> SORTING VISUALISER
+
+    <div class="algorithm">
+      <button class="algorithm_btn" id="alg_dropdown" onclick="showAlgorithms()">
+        Algorithm &#9662;
+      </button>
+      <div class="algorithm-content" id="algorithm_content">
+        <li><a onclick="setAlgorithm('bubbleSort')">Bubble Sort</a></li>
+        <li><a onclick="setAlgorithm('Quicksort')">Quicksort (Lomuto)</a></li>
+        <li><a onclick="setAlgorithm('cocktailShaker')">Cocktail Shaker Sort</a></li>
+      </div>
+    </div>
+
+    <div class="solve">
+      <button class="solve_btn" onclick="sort()">Solve!</button>
+    </div>
+
+    <div class="gen_data">
+      <button class="new_data" onclick="newData()">Generate New Data</button>
+    </div>
+
+    <div class="size">Size</div>
+
+    <div class ="slider_wrap">
+      <input id="slider_id" className="slider" type="range" min="5" max="100" value="100" oninput="sliderVal(this.value)">
+      <output id="output"></output>
+    </div>
+
+  </div>
+
+  <div class="main" position="position: relative;">
+    <canvas id="myChart" style="position: relative; height:100vh; width:60vw"></canvas>
+    <script src="./canvas.js"></script>
+  </div>
+
+  <script src="./main.js"></script>
+
+</body>
+
+</html>
