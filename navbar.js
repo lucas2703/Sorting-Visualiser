@@ -54,6 +54,10 @@ function sort() {
     {
         data = cocktail_sort(data);
     }
+    else if (selectedAlgorithm == 'Quicksort')
+    {
+        data = quicksort(data, 0, (data.length - 1));
+    }
 }
 
 
@@ -76,6 +80,9 @@ function newData() {
     let current_size = myChart.data.datasets[0].data.length;
     let new_array = createArray(current_size);
     let new_shuffled = shuffle(new_array);
+
+    // update working data var
+    data = new_shuffled;
 
     // put back into myChart
     myChart.data.datasets[0].data = new_shuffled;

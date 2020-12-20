@@ -127,6 +127,12 @@
     animation-duration: 0.5s;
 }
 
+.navbar a:hover, .gen_data .new_data:hover {
+    animation-name: text_fade_in;
+    animation-duration: 0.5s;
+    color: coral;
+}
+
 
 /*** SOLVE BUTTON STYLING ***/
 

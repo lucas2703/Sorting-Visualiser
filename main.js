@@ -12,7 +12,6 @@ async function bubble_sort(arr) {
     let n = arr.length;
     while (n > 0)
     {
-        console.log(arr);
         new_n = 0;
 
         for (i = 1; i < n; i++) 
@@ -30,7 +29,7 @@ async function bubble_sort(arr) {
                 new_n = i;
             }
 
-            await sleep(50);
+            await sleep(10);
 
             // Set them back
             myChart.data.datasets[0].backgroundColor[i - 1] = '#ff6384';
@@ -90,7 +89,6 @@ async function cocktail_sort(arr) {
         // If no changes, then break
         if (!swapped)
         {
-            console.log("breaks");
             return arr;
         }
     
@@ -145,6 +143,10 @@ function quicksort(arr, lo, hi) {
 function qs_partition(arr, lo, hi) {
     let pivot = arr[hi];
     let i = lo;
+
+    // Visualisation 
+    myChart.data.datasets[0].backgroundColor[lo + 1] = '#00c738';
+    myChart.update();
     for (let j = lo; j < hi; j++)
     {
         if (arr[j] < pivot)
